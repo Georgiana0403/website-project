@@ -29,10 +29,23 @@
         <main id="main-content">
             <!-- Home Section -->
             <section id="home-section" class="section active bg-white p-8 rounded-lg shadow-md mb-8">
-                <h2 class="text-2xl font-semibold mb-4">Professional Profile</h2>
-                <p class="text-gray-700">
-                    A passionate Cloud Solutions Architect and DevOps Engineer with a deep enthusiasm for AI and machine learning technologies.
-                </p>
+                <!-- Inside the home-section, replace the existing content with this -->
+            <!-- Inside the home-section, replace the existing content with this -->
+             <!-- Inside the home-section, replace the existing content with this -->
+             <div class="flex flex-col md:flex-row items-center">
+                <div class="w-48 h-48 rounded-full bg-gray-200 mb-4 md:mr-8 md:mb-0 overflow-hidden">
+                    <img src="profile-photo.jpg" alt="Georgeta Daniela Gorgan" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <h2 class="text-2xl font-semibold mb-4">Professional Profile</h2>
+                    <p class="text-gray-700">
+                        A passionate Cloud Solutions Architect and DevOps Engineer with a deep enthusiasm for AI and machine learning technologies. 
+                        Experienced in designing scalable cloud infrastructures, implementing DevOps practices, and developing intelligent solutions 
+                        that drive technological innovation.
+                    </p>
+                </div>
+            </div>
+
             </section>
 
             <!-- Projects Section -->
@@ -40,48 +53,28 @@
                 <h2 class="text-2xl font-semibold mb-4">Projects</h2>
                 
                 <!-- Project: ML Sentiment Analysis -->
-                <div class="bg-white p-6 rounded-lg shadow-md mb-4">
-                    <h3 class="font-bold mb-2">ML Sentiment Analysis</h3>
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <div>
-                            <p class="text-gray-600 mb-4">Detailed web application for analyzing text sentiment using advanced machine learning techniques.</p>
-                            <div class="mt-4 flex space-x-3">
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Python</span>
-                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full">TensorFlow</span>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold mb-2">Project Details</h4>
-                            <ul class="list-disc list-inside text-gray-700">
-                                <li>Real-time sentiment analysis</li>
-                                <li>Machine learning model training</li>
-                                <li>Web interface development</li>
-                            </ul>
+                <a href="projectAI.html" class="block hover:shadow-lg transition duration-300">
+                    <div class="bg-white p-6 rounded-lg shadow-md h-full">
+                        <h3 class="font-bold mb-2">ML Sentiment Analysis</h3>
+                        <p class="text-gray-600">Web application analyzing text sentiment using machine learning</p>
+                        <div class="mt-4 flex space-x-3">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Python</span>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full">TensorFlow</span>
                         </div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Project: Cloud Infrastructure -->
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="font-bold mb-2">Cloud Infrastructure</h3>
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <div>
-                            <p class="text-gray-600 mb-4">Terraform-based multi-environment AWS deployment with scalable and secure infrastructure.</p>
-                            <div class="mt-4 flex space-x-3">
-                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full">Terraform</span>
-                                <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full">AWS</span>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold mb-2">Project Details</h4>
-                            <ul class="list-disc list-inside text-gray-700">
-                                <li>Multi-environment setup</li>
-                                <li>Infrastructure as Code</li>
-                                <li>Automated deployment</li>
-                            </ul>
+                <a href="cloud-infrastructure.html" class="block hover:shadow-lg transition duration-300">
+                    <div class="bg-white p-6 rounded-lg shadow-md h-full">
+                        <h3 class="font-bold mb-2">Cloud Infrastructure with Terraform</h3>
+                        <p class="text-gray-600">Terraform-based multi-environment AWS deployment</p>
+                        <div class="mt-4 flex space-x-3">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Terraform</span>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full">Infastructure as Code</span>
                         </div>
                     </div>
-                </div>
+                </a>
             </section>
 
             <!-- Skills Section -->
@@ -90,13 +83,49 @@
                 <div class="flex flex-wrap gap-3">
                     <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full">AWS</span>
                     <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full">Terraform</span>
+                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full">Python</span>
+                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full">Linux</span>
+                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full">HTML</span>
+                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full">ORACLE</span>
+                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full">Docker</span>
+                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full">Security</span>
+                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full">DevOps</span>
+                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full">Git</span>
                     <!-- Add other skills as before -->
                 </div>
             </section>
 
             <!-- Certifications Section -->
-            <section id="certifications-section" class="section hidden mb-8">
-                <!-- Certifications content as before -->
+            <section id="certifications" class="mb-8">
+                <h2 class="text-2xl font-semibold mb-4">Certifications</h2>
+                <div class="space-y-3">
+                    <div class="bg-white p-4 rounded-lg shadow-md">
+                        <h3 class="font-bold">AWS Certified AI Practitioner</h3>
+                        <p>Issued Dec 2024</p>
+                        <p>Infrastructure as Code proficiency</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-md">
+                        <h3 class="font-bold">AWS Solutions Architect</h3>
+                        <p>Issued Oct 2024</p>
+                        <p>Validated expertise in designing distributed systems</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-md">
+                        <h3 class="font-bold">HashiCorp Certified: Terraform Associate</h3>
+                        <p>Issued Sep 2024</p>
+                        <p>Infrastructure as Code proficiency</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-md">
+                        <h3 class="font-bold">GitLab Certified CI/CD Associate</h3>
+                        <p>Issued Oct 2024</p>
+                        <p>Infrastructure as Code proficiency</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-md">
+                        <h3 class="font-bold">AWS Certified Cloud Practitioner</h3>
+                        <p>Issued Jul 2024</p>
+                        <p>AWS fundamentals</p>
+                    </div>
+                    
+                </div>
             </section>
 
             <!-- Contact Section -->

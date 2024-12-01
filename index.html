@@ -206,29 +206,6 @@
             });
         });
         
-        window.addEventListener('DOMContentLoaded', () => {
-        
-          const projectsSection = document.getElementById('projects-section');
-          projectsSection.addEventListener('click', (event) => {
-            if (event.target.tagName.toLowerCase() === 'a') {
-               sessionStorage.setItem('previousPageUrl', window.location.href + '#projects-section');
-            }
-          });
-
-         // Handle the "Back to Portfolio" button click
-          const backToPortfolioLink = document.getElementById('backToPortfolio');
-          if (backToPortfolioLink) {
-            backToPortfolioLink.addEventListener('click', (event) => {
-              event.preventDefault();
-              const previousPageUrl = sessionStorage.getItem('previousPageUrl');
-              if (previousPageUrl) {
-                window.location.href = previousPageUrl;
-              } else {
-                window.location.hash = '#home-section'; // Scroll to the home section
-              }
-            });
-        }
-      });
     </script>
 </body>
 </html>

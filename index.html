@@ -69,7 +69,7 @@
                     <p class="text-gray-700">
                         I am Romanian and I have decided to come to Germany in 2022. I have been travelling, I have made friends, I have learned the language and in the end I have decided to stay here.
                         A year ago, I took a big step and enrolled in a digital school program, and it turned out to be more than just education - it was a complete transformation for me. 
-                        
+
                   </div>
                 </div>
             </section>
@@ -185,23 +185,32 @@
             const navLinks = document.querySelectorAll('.nav-link');
             const sections = document.querySelectorAll('.section');
 
+            function showSection(sectionId) {
+               // Hide all sections
+               sections.forEach(section => {
+                   section.classList.add('hidden');
+                   section.classList.remove('active');
+                });
+
+                // Show selected section
+                const activeSection = document.getElementById(`${sectionId}-section`);
+                activeSection.classList.remove('hidden');
+                activeSection.classList.add('active');
+            }
+
             navLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
                     const sectionId = link.getAttribute('data-section');
-                    
-                    // Hide all sections
-                    sections.forEach(section => {
-                        section.classList.add('hidden');
-                        section.classList.remove('active');
-                    });
-
-                    // Show selected section
-                    const activeSection = document.getElementById(`${sectionId}-section`);
-                    activeSection.classList.remove('hidden');
-                    activeSection.classList.add('active');
+                    showSection(sectionId);
                 });
             });
+
+            // Handle initial page load with hash
+            if (window.location.hash) {
+                const sectionId = window.location.hash.substring(1);
+                showSection(sectionId);
+            }
         });
         
     </script>

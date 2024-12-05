@@ -26,11 +26,38 @@
                 <h2 class="text-2xl font-semibold text-blue-700 mb-4">🚀 Cluster Management</h2>
                 <div class="grid md:grid-cols-2 gap-4">
                     <div class="bg-blue-50 p-4 rounded-lg relative">
-                        <code class="text-sm">kubectl get nodes</code>
-                        <button onclick="copyToClipboard('kubectl get nodes')" class="absolute right-2 top-2 text-blue-600 hover:text-blue-800">
+                        <code class="text-sm">kubectl version</code>
+                        <button onclick="copyToClipboard('kubectl version')" class="absolute right-2 top-2 text-blue-600 hover:text-blue-800">
                             📋
                         </button>
-                        <div id="tooltip-kubectl-get-nodes" class="absolute right-0 top-10 bg-green-500 text-white text-xs px-2 py-1 rounded hidden">
+                        <div id="tooltip-kubectl-version" class="absolute right-0 top-10 bg-green-500 text-white text-xs px-2 py-1 rounded hidden">
+                            Copied!
+                        </div>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">kubectl cluster-info</code>
+                        <button onclick="copyToClipboard('kubectl cluster-info')" class="absolute right-2 top-2 text-blue-600 hover:text-blue-800">
+                            📋
+                        </button>
+                        <div id="tooltip-kubectl-cluster-info" class="absolute right-0 top-10 bg-green-500 text-white text-xs px-2 py-1 rounded hidden">
+                            Copied!
+                        </div>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">kubectl config get-context [context name]</code>
+                        <button onclick="copyToClipboard('kubectl config get/context [context name]')" class="absolute right-2 top-2 text-blue-600 hover:text-blue-800">
+                            📋
+                        </button>
+                        <div id="tooltip-kubectl-config-get-context" class="absolute right-0 top-10 bg-green-500 text-white text-xs px-2 py-1 rounded hidden">
+                            Copied!
+                        </div>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">kubectl config use-context [context name]</code>
+                        <button onclick="copyToClipboard('kubectl config use-cotext [context name]')" class="absolute right-2 top-2 text-blue-600 hover:text-blue-800">
+                            📋
+                        </button>
+                        <div id="tooltip-kubectl-config-use-context" class="absolute right-0 top-10 bg-green-500 text-white text-xs px-2 py-1 rounded hidden">
                             Copied!
                         </div>
                     </div>

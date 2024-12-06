@@ -5,17 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Python Commands Cheatsheet</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        function copyToClipboard(command) {
-            navigator.clipboard.writeText(command).then(() => {
-                const tooltip = document.getElementById(`tooltip-${command.replace(/\s+/g, '-')}`);
-                tooltip.classList.remove('hidden');
-                setTimeout(() => {
-                    tooltip.classList.add('hidden');
-                }, 2000);
-            });
-        }
-    </script>
 </head>
 <body class="bg-gradient-to-br from-blue-100 to-blue-200 min-h-screen p-8">
     <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8">
@@ -27,12 +16,7 @@
                 <div class="grid md:grid-cols-2 gap-4">
                     <div class="bg-blue-50 p-4 rounded-lg relative">
                         <code class="text-sm">len(list)</code>
-                        <button onclick="copyToClipboard('len(list)')" class="absolute right-2 top-2 text-blue-600 hover:text-blue-800">
-                            📋
-                        </button>
-                        <div id="tooltip-len-list" class="absolute right-0 top-10 bg-green-500 text-white text-xs px-2 py-1 rounded hidden">
-                            Copied!
-                        </div>
+                        
                     </div>
                 </div>
             </section>

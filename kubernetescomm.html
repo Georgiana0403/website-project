@@ -57,9 +57,41 @@
                     <div class="bg-blue-50 p-4 rounded-lg relative">
                         <code class="text-sm">kubectl describe X [ name]</code>                       
                     </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">kubectl edit X [ name]</code>                       
+                    </div>
+                </div>
+                <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-4">🚀 Nodes</h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">kubectl get nodes</code>                       
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">kubectl top node [node name]</code>                       
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">kubectl cordon/uncordon node [node name]</code>                       
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">kubectl drain node [node name]</code>                        
+                    </div>
+                </div>
+                <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-4">🚀 Other Common Commands</h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">kubectl apply -f [filename.yaml]</code>                       
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">kubectl delete -f [filename.yaml]</code>                       
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">kubectl port-forward [pod name] [local port]:[remote port]</code>                       
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">kubectl logs [pod name]</code>                        
+                    </div>
                 </div>
             </section>
-            <!-- More sections like Deployment, Service Management, etc. --> 
         </div>
     </div>
 </body>

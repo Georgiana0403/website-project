@@ -6,13 +6,21 @@
     <title>Kubernetes Commands Cheatsheet</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        function copyToClipboard(command) {
-            navigator.clipboard.writeText(command).then(() => {
-                const tooltip = document.getElementById(`tooltip-${command.replace(/\s+/g, '-')}`);
-                tooltip.classList.remove('hidden');
-                setTimeout(() => {
-                    tooltip.classList.add('hidden');
-                }, 2000);
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                // Show tooltip
+                const tooltipId = `tooltip-${text.replace(/\s+/g, '-')}`;
+                const tooltip = document.getElementById(tooltipId);
+                if (tooltip) {
+                    tooltip.classList.remove('hidden');
+                    
+                    // Hide tooltip after 2 seconds
+                    setTimeout(() => {
+                        tooltip.classList.add('hidden');
+                    }, 2000);
+                }
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
             });
         }
     </script>
@@ -23,7 +31,7 @@
         
         <div class="space-y-6">
             <section>
-                <h2 class="text-2xl font-semibold text-blue-700 mb-4">🚀 Cluster Info and Configuration</h2>
+                <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-4">🚀 Cluster Info and Configuration</h2>
                 <div class="grid md:grid-cols-2 gap-4">
                     <div class="bg-blue-50 p-4 rounded-lg relative">
                         <code class="text-sm">kubectl version</code>
@@ -58,6 +66,45 @@
                             📋
                         </button>
                         <div id="tooltip-kubectl-config-use-context" class="absolute right-0 top-10 bg-green-500 text-white text-xs px-2 py-1 rounded hidden">
+                            Copied!
+                        </div>
+                    </div>
+                </div>
+                <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-4">🚀 Namespaces</h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">kubectl get namespaces</code>
+                        <button onclick="copyToClipboard('kubectl get namespaces')" class="absolute right-2 top-2 text-blue-600 hover:text-blue-800">
+                            📋
+                        </button>
+                        <div id="tooltip-get-namespaces" class="absolute right-0 top-10 bg-green-500 text-white text-xs px-2 py-1 rounded hidden">
+                            Copied!
+                        </div>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">kubectl create namespace [namespace name]</code>
+                        <button onclick="copyToClipboard('kubectl create namespace [namespace name]')" class="absolute right-2 top-2 text-blue-600 hover:text-blue-800">
+                            📋
+                        </button>
+                        <div id="tooltip-kubectl-create-namespace" class="absolute right-0 top-10 bg-green-500 text-white text-xs px-2 py-1 rounded hidden">
+                            Copied!
+                        </div>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">kubectl config set-context --current --namespace=[namespace name]</code>
+                        <button onclick="copyToClipboard('kubectl config set-context --current --namespace=[namespace name]')" class="absolute right-2 top-2 text-blue-600 hover:text-blue-800">
+                            📋
+                        </button>
+                        <div id="tooltip-kubectl-config-set-context" class="absolute right-0 top-10 bg-green-500 text-white text-xs px-2 py-1 rounded hidden">
+                            Copied!
+                        </div>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">kubectl delete namespace [namespace name]</code>
+                        <button onclick="copyToClipboard('kubectl delete namespace [namespace name]')" class="absolute right-2 top-2 text-blue-600 hover:text-blue-800">
+                            📋
+                        </button>
+                        <div id="tooltip-kubectl-delete-namespace" class="absolute right-0 top-10 bg-green-500 text-white text-xs px-2 py-1 rounded hidden">
                             Copied!
                         </div>
                     </div>

@@ -8,28 +8,172 @@
 </head>
 <body class="bg-gradient-to-br from-blue-100 to-blue-200 min-h-screen p-8">
     <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8">
-        <h1 class="text-4xl font-bold text-center text-blue-800 mb-8">🐳 Docker Commands Cheatsheet</h1>
+        <h1 class="text-4xl font-bold text-center text-blue-800 mb-8">🐳 Docker Commands</h1>
         
         <div class="space-y-6">
             <section>
-                <h2 class="text-2xl font-semibold text-blue-700 mb-4">🚀 Basic Docker Commands</h2>
+                <h2 class="text-2xl font-semibold text-blue-700 mb-4">🔧 Management</h2>
                 <div class="grid md:grid-cols-2 gap-4">
                     <div class="bg-blue-50 p-4 rounded-lg relative">
-                        <code class="text-sm">docker pull [image]</code>
-                        
+                        <code class="text-sm">docker ---help </code>  
                     </div>
-                    <!-- More commands similar to above -->
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker -d</code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker info</code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker version</code>  
+                    </div>
                 </div>
             </section>
 
             <section>
-                <h2 class="text-2xl font-semibold text-blue-700 mb-4">🔧 Container Management</h2>
+                <h2 class="text-2xl font-semibold text-blue-700 mb-4">🚀 Docker Hub</h2>
                 <div class="grid md:grid-cols-2 gap-4">
                     <div class="bg-blue-50 p-4 rounded-lg relative">
-                        <code class="text-sm">docker ps -a</code>
-                        
+                        <code class="text-sm">docker login -u [username]</code>      
                     </div>
-                    <!-- More commands similar to above -->
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker push [username]/[image_name]</code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker search [image_name]</code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker pull [image_name]</code>  
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2 class="text-2xl font-semibold text-blue-700 mb-4">🖼️ Images</h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker build </code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker commit [container_name]</code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker history [container_name]</code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker images</code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker import</code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker load</code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker rmi</code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker save</code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker tag</code>  
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2 class="text-2xl font-semibold text-blue-700 mb-4">🏗️ Container</h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker run --name [container_name] [image_name] </code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker run -p [host_port]:[container_port] [image_name]</code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker run -d [image_name]</code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker start|stop [container_name] (or [container-id])</code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker rm [container_name]</code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker exec -it [container_name] sh</code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker logs -f [container_name]</code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker inspect [container_name] (or [container_id])</code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker ps </code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker ps -a </code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker container stats </code>  
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2 class="text-2xl font-semibold text-blue-700 mb-4">📡 Network</h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker network create </code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker network connect</code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker disconnect</code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker inspect</code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker network ls</code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker network rm</code>  
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2 class="text-2xl font-semibold text-blue-700 mb-4">📚 Volume</h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker volume create </code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker volume ls</code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker volume rm</code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker volume inspect</code>  
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2 class="text-2xl font-semibold text-blue-700 mb-4">🐝 Swarm</h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker node ls</code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker service create</code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker service ls</code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker service scale</code>  
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg relative">
+                        <code class="text-sm">docker service rm</code>  
+                    </div>
                 </div>
             </section>
         </div>

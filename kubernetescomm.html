@@ -6,21 +6,13 @@
     <title>Kubernetes Commands Cheatsheet</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                // Show tooltip
-                const tooltipId = `tooltip-${text.replace(/\s+/g, '-')}`;
-                const tooltip = document.getElementById(tooltipId);
-                if (tooltip) {
-                    tooltip.classList.remove('hidden');
-                    
-                    // Hide tooltip after 2 seconds
-                    setTimeout(() => {
-                        tooltip.classList.add('hidden');
-                    }, 2000);
-                }
-            }).catch(err => {
-                console.error('Failed to copy: ', err);
+        function copyToClipboard(command) {
+            navigator.clipboard.writeText(command).then(() => {
+                const tooltip = document.getElementById(`tooltip-${command.replace(/\s+/g, '-')}`);
+                tooltip.classList.remove('hidden');
+                setTimeout(() => {
+                    tooltip.classList.add('hidden');
+                }, 2000);
             });
         }
     </script>

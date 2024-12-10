@@ -39,7 +39,7 @@
                         <ul class="list-disc list-inside text-gray-700">
                             <li>Building the whole infrastructure with Terraform</li>
                             <li>Apply an Auto Scaling Group Policy to respond to ECS metrics</li>
-                            <li>Deploy an Amazon ECS Cluster into an existing Amazon VPC using Terraform</li>
+                            <li>Deploy an Amazon ECS Cluster into an Amazon VPC using Terraform</li>
                             <li>CloudWatch Monitoring</li>
                         </ul>
                     </div>
@@ -50,22 +50,30 @@
                 <h2 class="text-2xl font-semibold mb-4">Project Steps</h2>
                 <div class="grid md:grid-cols-2 gap-4">
                     <div>
-                       <h3 class="font-bold mb-2">Key Features</h3>
+                       <h3 class="font-bold mb-2">Understanding what the Terraform scripts contain</h3>
                        <p class="text-gray-700 mb-4">
-                          Terraform is an infrastructure-as-code tool that makes handling infrastructure more straightforward and manageable.
-                          A Terraform module is a collection of configuration files that encapsulate groups of resources dedicated to one task.
-                          Modules can be used to package and reuse resource configurations, making it easier to manage larger application components like an Amazon ECS Cluster.
+                          The Terraform scripts will create the whole infrastructure we need for this project. 
+                          First we create the VPC across 2 avability zones with 2 public and 2 private subnets, Internet Gateway, NAT Gateways for private subnets and comprehensive route tables.
+                          Also we create a Security Group, Load Balancer and an IAM role for the ECS task.
                        </p>
                     </div>
                     <div class="ml-4">
                         <img src="ecs-diagram.png" alt="ECS diagram" class="h-64">
                     </div>
                     <div>
-                        <h3 class="font-bold mb-2">Key Features</h3>
+                        <h3 class="font-bold mb-2">The ECS Cluster will contain two ECS Services</h3>
                         <p class="text-gray-700 mb-4">
-                           Terraform is an infrastructure-as-code tool that makes handling infrastructure more straightforward and manageable.
-                           A Terraform module is a collection of configuration files that encapsulate groups of resources dedicated to one task.
-                           Modules can be used to package and reuse resource configurations, making it easier to manage larger application components like an Amazon ECS Cluster.
+                            A frontend service will deploy tasks (containers) behind the public-facing Application Load Balancer (ALB) and in each of the public subnets.
+                            These tasks are based on an existing ECR image that serves a simple webpage and data retrieved from the backend.
+                        </p>
+                     </div>
+                    <div class="ml-4">
+                        <img src="ecs-diagram.png" alt="ECS diagram" class="h-64">
+                    </div>
+                    <div>                      
+                        <p class="text-gray-700 mb-4">
+                            The backend service tasks will be behind the internal-facing application load balancer, inside each private subnet. 
+                            The ECR image used for the backend service generates sample data that is passed to the frontend service.
                         </p>
                      </div>
                     <div class="ml-4">

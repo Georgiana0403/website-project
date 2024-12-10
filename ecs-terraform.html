@@ -23,6 +23,7 @@
                             Terraform is an infrastructure-as-code tool that makes handling infrastructure more straightforward and manageable.
                             A Terraform module is a collection of configuration files that encapsulate groups of resources dedicated to one task.
                             Modules can be used to package and reuse resource configurations, making it easier to manage larger application components like an Amazon ECS Cluster.
+                            The project folder contains 4 files: main.tf, variables.tf, terraform.tfvars and outputs.tf, and they can be found in my GitHub repository, the link is at the end of the page.
                         </p>
 
                         <h3 class="font-bold mb-2">Technologies Used</h3>
@@ -48,17 +49,17 @@
 
             <section class="bg-white p-8 rounded-lg shadow-md mb-8">
                 <h2 class="text-2xl font-semibold mb-4">Project Steps</h2>
-                <div class="grid md:grid-cols-2 gap-4">
+                <div class="grid md:grid-cols-2 gap-8">
                     <div>
                        <h3 class="font-bold mb-2">Understanding what the Terraform scripts contain</h3>
                        <p class="text-gray-700 mb-4">
-                          The Terraform scripts will create the whole infrastructure we need for this project. 
-                          First we create the VPC across 2 avability zones with 2 public and 2 private subnets, Internet Gateway, NAT Gateways for private subnets and comprehensive route tables.
-                          Also we create a Security Group, Load Balancer and an IAM role for the ECS task.
+                        The Terraform scripts will create the entire infrastructure required for this project. 
+                        This includes a VPC spanning two availability zones with two public and two private subnets, an Internet Gateway, NAT Gateways for private subnets, and detailed route tables. 
+                        Additionally, it will provision a Security Group, a Load Balancer, CloudWatch for monitoring and an IAM role for the ECS tasks.
                        </p>
                     </div>
                     <div class="ml-4">
-                        <img src="vpc-resources.png" alt="ECS diagram" class="h-64">
+                        <img src="vpc-resources.png" alt="ECS diagram" class="h-64 w-74">
                     </div>
                     <div>
                         <h3 class="font-bold mb-2">The ECS Cluster will contain two ECS Services</h3>
@@ -68,7 +69,7 @@
                         </p>
                      </div>
                     <div class="ml-4">
-                        <img src="ecs-front-end.png" alt="ECS diagram" class="h-64">
+                        <img src="ecs-front-end.png" alt="ECS diagram" class="h-64 w-74">
                     </div>
                     <div>                      
                         <p class="text-gray-700 mb-4">
@@ -77,18 +78,17 @@
                         </p>
                      </div>
                     <div class="ml-4">
-                        <img src="ecs-backend.png" alt="ECS diagram" class="h-64">
+                        <img src="ecs-backend.png" alt="ECS diagram" class="h-64 w-74">
                     </div>
                     <div>
-                        <h3 class="font-bold mb-2">Key Features</h3>
+                        <h3 class="font-bold mb-2">Data update before deploying</h3>
                         <p class="text-gray-700 mb-4">
-                           Terraform is an infrastructure-as-code tool that makes handling infrastructure more straightforward and manageable.
-                           A Terraform module is a collection of configuration files that encapsulate groups of resources dedicated to one task.
-                           Modules can be used to package and reuse resource configurations, making it easier to manage larger application components like an Amazon ECS Cluster.
+                            We need to specify the AWS region where the infrastructure will be deployed and replace YOUR_ACCOUNT_ID with your actual AWS account ID. 
+                            Additionally, ensure any other placeholder values, such as resource names, are updated to match your environment requirements.
                         </p>
                      </div>
                     <div class="ml-4">
-                        <img src="ecs-diagram.png" alt="ECS diagram" class="h-64">
+                        <img src="credentials.png" alt="ECS diagram" class="h-64 w-74">
                     </div>
                     <div>
                         <h3 class="font-bold mb-2">Environment after Deploying</h3>
@@ -99,7 +99,7 @@
                         </p>
                      </div>
                     <div class="ml-4">
-                        <img src="cluster.png" alt="ECS diagram" class="h-64">
+                        <img src="cluster.png" alt="ECS diagram" class="h-64 w-74">
                     </div>
                     <div>
                        <h3 class="font-bold mb-2">Deploying and Testing an Amazon ECS Application</h3>
@@ -109,7 +109,7 @@
                        </p>
                     </div>
                     <div class="ml-4">
-                        <img src="ecs-diagram.png" alt="ECS diagram" class="h-64">
+                        <img src="ecs-diagram.png" alt="ECS diagram" class="h-64 w-74">
                     </div>
                 </div>
             </section>

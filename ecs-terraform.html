@@ -51,64 +51,64 @@
                 <h2 class="text-2xl font-semibold mb-4">Project Steps</h2>
                 <div class="grid md:grid-cols-2 gap-6 mt-8">
                     <div>
-                       <h3 class="font-bold mb-2">Understanding what the Terraform scripts contain</h3>
+                       <h3 class="font-bold mb-2 mt-8">Understanding what the Terraform scripts contain</h3>
                        <p class="text-gray-700 mb-4">
                         The Terraform scripts will create the entire infrastructure required for this project. 
                         This includes a VPC spanning two availability zones with two public and two private subnets, an Internet Gateway, NAT Gateways for private subnets, and detailed route tables. 
                         Additionally, it will provision a Security Group, a Load Balancer, CloudWatch for monitoring and an IAM role for the ECS tasks.
                        </p>
                     </div>
-                    <div class="ml-4">
+                    <div class="ml-4 mt-8">
                         <img src="vpc-resources.png" alt="ECS diagram" class="h-64 w-74">
                     </div>
                     <div>
-                        <h3 class="font-bold mb-2">The ECS Cluster will contain two ECS Services</h3>
+                        <h3 class="font-bold mb-2 mt-8">The ECS Cluster will contain two ECS Services</h3>
                         <p class="text-gray-700 mb-4 text-justify">
                             A frontend service will deploy tasks (containers) behind the public-facing Application Load Balancer (ALB) and in each of the public subnets.
                             These tasks are based on an existing ECR image that serves a simple webpage and data retrieved from the backend.
                         </p>
                      </div>
-                    <div class="ml-4">
+                    <div class="ml-4 mt-8">
                         <img src="ecs-front-end.png" alt="ECS diagram" class="h-64 w-74">
                     </div>
                     <div>                      
-                        <p class="text-gray-700 mb-4">
+                        <p class="text-gray-700 mb-4 mt-8">
                             The backend service tasks will be behind the internal-facing application load balancer, inside each private subnet. 
                             The ECR image used for the backend service generates sample data that is passed to the frontend service.
                         </p>
                      </div>
-                    <div class="ml-4">
+                    <div class="ml-4 mt-8">
                         <img src="ecs-backend.png" alt="ECS diagram" class="h-64 w-74">
                     </div>
                     <div>
-                        <h3 class="font-bold mb-2">Data update before deploying</h3>
+                        <h3 class="font-bold mb-2 mt-8">Data update before deploying</h3>
                         <p class="text-gray-700 mb-4">
                             We need to specify the AWS region where the infrastructure will be deployed and replace YOUR_ACCOUNT_ID with your actual AWS account ID. 
                             Additionally, ensure any other placeholder values, such as resource names, are updated to match your environment requirements.
                         </p>
                      </div>
-                    <div class="ml-4">
+                    <div class="ml-4 mt-8">
                         <img src="credentials.png" alt="ECS diagram" class="h-34 w-74">
                     </div>
                     <div>
-                        <h3 class="font-bold mb-2">Environment after Deploying</h3>
+                        <h3 class="font-bold mb-2 mt-8">Environment after Deploying</h3>
                         <p class="text-gray-700 mb-4">
                             After deployment, the environment will include a VPC with public and private subnets, enabling secure networking for your ECS services. 
                             It will also feature an ECS cluster with associated task execution roles, a load balancer, and logging configured via CloudWatch. 
                             This setup provides a scalable, internet-accessible architecture for containerized applications.
                         </p>
                      </div>
-                    <div class="ml-4">
+                    <div class="ml-4 mt-8">
                         <img src="cluster.png" alt="ECS diagram" class="h-64 w-74">
                     </div>
                     <div>
-                       <h3 class="font-bold mb-2">Deploying and Testing an Amazon ECS Application</h3>
+                       <h3 class="font-bold mb-2 mt-8">Deploying and Testing an Amazon ECS Application</h3>
                        <p class="text-gray-700 mb-4">                        
                            The application is a simple API Results webpage. 
                            Each time you refresh the page, the frontend ECS tasks retrieve a new set of data from the backend tasks, then display them in a table organized by Record ID
                        </p>
                     </div>
-                    <div class="ml-4">
+                    <div class="ml-4 mt-8">
                         <img src="ecs-diagram.png" alt="ECS diagram" class="h-64 w-74">
                     </div>
                 </div>

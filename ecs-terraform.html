@@ -94,13 +94,13 @@
                             Additionally, ensure any other placeholder values, such as resource names, are updated to match your environment requirements.
                             Run the following commands to configure your AWS credentials:
                         </p>
-                        <p class="text-black-700 bg-gray-100 px-3 py-1 flex rounded-full mb-4">
+                        <p class="text-black-700 bg-gray-100 px-3 py-1 rounded-full inline-block mb-4">
                             aws configure set aws_access_key_id YOUR_KEY                                                       
                         </p>
-                        <p class="text-black-700 bg-gray-100 px-3 py-1 rounded-full mb-4">                           
+                        <p class="text-black-700 bg-gray-100 px-3 py-1 rounded-full inline-block mb-4">                           
                             aws configure set aws_secret_access_key YOUR_SECRET_KEY
                         </p>
-                        <p class="text-black-700 bg-gray-100 px-3 py-1 rounded-full mb-4">                           
+                        <p class="text-black-700 bg-gray-100 px-3 py-1 rounded-full inline-block mb-4">                           
                             aws configure set default.region eu-central-1
                         </p>
                      </div>
@@ -112,15 +112,19 @@
                         <p class="text-gray-700 mb-4">
                             Enter the following commands to initialize the Terraform project:
                         </p>
-                        <p class="text-black-700 bg-gray-100 px-3 py-1 rounded-full mb-4">
-                            cd ecs_cluster
+                        <p class="text-black-700 bg-gray-100 px-3 py-1 rounded-full inline-block mb-4">
+                            cd ecs_cluster                           
+                        </p>
+                        <p class="text-black-700 bg-gray-100 px-3 py-1 rounded-full inline-block mb-4">                           
                             terraform init
                         </p>
                         <p class="text-gray-700 mb-4">
                             Enter the following command to validate and summarize your deployment:
                         </p>
-                        <p class="text-black-700 bg-gray-100 px-3 py-1 rounded-full mb-4">
-                            terraform plan
+                        <p class="text-black-700 bg-gray-100 px-3 py-1 rounded-full inline-block mb-4">
+                            terraform plan                            
+                        </p>
+                        <p class="text-black-700 bg-gray-100 px-3 py-1 rounded-full inline-block mb-4">                            
                             terraform validate
                         </p>
                      </div>
@@ -132,7 +136,7 @@
                         <p class="text-gray-700 mb-4">
                             Entering the following command will deploy your ECS Cluster, it may take up to 3 minutes to become accessible.
                         </p>
-                        <p class="text-black-700 bg-gray-100 px-3 py-1 rounded-full mb-4">
+                        <p class="text-black-700 bg-gray-100 px-3 py-1 rounded-full inline-block mb-4">
                             terraform apply --auto-approve
                         </p>
                      </div>

@@ -65,26 +65,34 @@
                         <h3 class="font-bold mb-2 mt-8">The ECS Cluster will contain two ECS Services</h3>
                         <p class="text-gray-700 mb-4 text-justify">
                             A frontend service will deploy tasks (containers) behind the public-facing Application Load Balancer (ALB) and in each of the public subnets.
-                            These tasks are based on an existing ECR image that serves a simple webpage and data retrieved from the backend.
+                            These tasks are based on an existing ECR image that serves a simple webpage and data retrieved from the backend. 
+                            🐳mendhak/http-https-echo for backend: Returns any HTTP request as a JSON response.
                         </p>
                      </div>
                     <div class="ml-4 mt-8">
-                        <img src="ecs-front-end.png" alt="ECS diagram" class="h-64 w-74">
+                        <img src="ecs-service1.png" alt="ECS diagram" class="h-64 w-74">
                     </div>
                     <div>                      
                         <p class="text-gray-700 mb-4 mt-8">
                             The backend service tasks will be behind the internal-facing application load balancer, inside each private subnet. 
                             The ECR image used for the backend service generates sample data that is passed to the frontend service.
+                            🐳paulbouwer/hello-kubernetes for frontend: A web application that fetches and displays the API results
                         </p>
                      </div>
                     <div class="ml-4 mt-8">
-                        <img src="ecs-backend.png" alt="ECS diagram" class="h-64 w-74">
+                        <img src="ecs-service2.png" alt="ECS diagram" class="h-64 w-74">
                     </div>
                     <div>
                         <h3 class="font-bold mb-2 mt-8">Data update before deploying</h3>
                         <p class="text-gray-700 mb-4">
-                            We need to specify the AWS region where the infrastructure will be deployed and replace YOUR_ACCOUNT_ID with your actual AWS account ID. 
+                            We need to specify the AWS region where the infrastructure will be deployed and use your Access Keys to log into AWS. 
                             Additionally, ensure any other placeholder values, such as resource names, are updated to match your environment requirements.
+                            Run the following commands to configure your AWS credentials:
+                        </p>
+                        <p class="text-black-700 font-bold mb-4">
+                            aws configure set aws_access_key_id YOUR_KEY
+                            aws configure set aws_secret_access_key YOUR_SECRET_KEY
+                            aws configure set default.region eu-central-1
                         </p>
                      </div>
                     <div class="ml-4 mt-8">
@@ -93,9 +101,18 @@
                     <div>
                         <h3 class="font-bold mb-2 mt-8">Deploying the Infrastructure</h3>
                         <p class="text-gray-700 mb-4">
-                            After deployment, the environment will include a VPC with public and private subnets, enabling secure networking for your ECS services. 
-                            It will also feature an ECS cluster with associated task execution roles, a load balancer, and logging configured via CloudWatch. 
-                            This setup provides a scalable, internet-accessible architecture for containerized applications.
+                            Enter the following commands to initialize the Terraform project:
+                        </p>
+                        <p class="text-black-700 font-bold mb-4">
+                            cd ecs_cluster
+                            terraform init
+                        </p>
+                        <p class="text-gray-700 mb-4">
+                            Enter the following command to validate and summarize your deployment:
+                        </p>
+                        <p class="text-black-700 font-bold mb-4">
+                            terraform plan
+                            terraform validate
                         </p>
                      </div>
                     <div class="ml-4 mt-8">
@@ -104,9 +121,10 @@
                     <div>
                         <h3 class="font-bold mb-2 mt-8">Deploying the Infrastructure</h3>
                         <p class="text-gray-700 mb-4">
-                            After deployment, the environment will include a VPC with public and private subnets, enabling secure networking for your ECS services. 
-                            It will also feature an ECS cluster with associated task execution roles, a load balancer, and logging configured via CloudWatch. 
-                            This setup provides a scalable, internet-accessible architecture for containerized applications.
+                            Entering the following command will deploy your ECS Cluster, it may take up to 3 minutes to become accessible.
+                        </p>
+                        <p class="text-black-700 font-bold mb-4">
+                            terraform apply --auto-approve
                         </p>
                      </div>
                     <div class="ml-4 mt-8">
@@ -126,8 +144,7 @@
                     <div>
                        <h3 class="font-bold mb-2 mt-8">Deploying and Testing an Amazon ECS Application</h3>
                        <p class="text-gray-700 mb-4">                        
-                           The application is a simple API Results webpage. 
-                           Each time you refresh the page, the frontend ECS tasks retrieve a new set of data from the backend tasks, then display them in a table organized by Record ID
+                           The application is a simple API Results webpage where the frontend retrieves data from the backend.
                        </p>
                     </div>
                     <div class="ml-4 mt-8">
@@ -143,28 +160,6 @@
                      <div class="ml-4 mt-8">
                          <img src="destroy.png" alt="ECS diagram" class="h-64 w-74">
                      </div>
-                </div>
-            </section>
-
-            <section class="bg-white p-8 rounded-lg shadow-md mb-8">
-                <h2 class="text-2xl font-semibold mb-4">Technical Details</h2>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <h3 class="font-bold mb-2">Challenges</h3>
-                        <ul class="list-disc list-inside text-gray-700">
-                            <li>Implementing accurate sentiment detection</li>
-                            <li>Handling multiple language inputs</li>
-                            <li>Optimizing machine learning model</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="font-bold mb-2">Solutions</h3>
-                        <ul class="list-disc list-inside text-gray-700">
-                            <li>Advanced neural network architecture</li>
-                            <li>Multi-language training dataset</li>
-                            <li>Performance optimization techniques</li>
-                        </ul>
-                    </div>
                 </div>
             </section>
 
